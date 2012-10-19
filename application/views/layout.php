@@ -20,7 +20,7 @@
             	</div>
         	   
 		        <div id="preview">
-		           <?php echo $preview; //$create; ?>
+		           <?php echo $preview; ?>
 		        </div>
             </div>
      

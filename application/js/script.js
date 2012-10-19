@@ -48,7 +48,7 @@
 	 * bind click event to listview items 
 	 * to display snippet in box and make it editable
 	 *--------------------------------------------------------*/
-	$( 'li' ).each( function( index, element ) { 
+	$( '#listview' ).find( 'li' ).each( function( index, element ) { 
 		
 		$( this ).on( 'click', function() {
 			var $li = $( element );
@@ -69,18 +69,20 @@
 				lastElement.removeClass( 'highlighted' );
 				$li.addClass( 'highlighted' );
 				
-				var snippetId =  $li.attr( 'data-id' );
-				var text =  $li.attr( 'data-attr' );
+				var snippetId = $li.attr( 'data-id' );
+				var text = $li.attr( 'data-attr' );
 				
 				$( '#snippetId' ).val( snippetId );
 				preview.html( ''+text+'' );
 				prettyPrint();	
 					
 				$( '#snippet' ).val( text );
+				setEndOfContenteditable( codebox );	
 			} 
 			
 		});
 	});
+	
 	
 	/*---------------------------------------------------------*
 	 * set cursor at the end of the textbox
@@ -127,7 +129,7 @@
 		}
 	}
 	
-	$( 'li' ).each( function( index, element ) { 
+	$( '#listview' ).find( 'li' ).each( function( index, element ) { 
 		$( this ).bind( 'mouseover', { 'element': element }, previewHandler );
 	});
 	

@@ -12,7 +12,6 @@
 	<header>
 		<div class="content"><?php echo $header; ?></div>
 	</header>
-      
       <div id="wrapper">     
         	<div id="content">
   

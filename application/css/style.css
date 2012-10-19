@@ -175,7 +175,17 @@
  /*----------------------------------------------------------*
  * 	Preview
  *-----------------------------------------------------------*/
- #previewbox {}
+ #previewbox,
+ #codebox {
+ 	outline: 0px solid transparent;
+ }
+ 
+ #previewbox:focus,
+ #codebox:focus {
+ 	box-shadow: inset 0px 0px 3px #000;	
+ 	cursor: text;
+ 	color: #fff;
+ }
 
  #previewbox > pre {
 	width: 600px;

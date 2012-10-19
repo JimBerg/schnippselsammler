@@ -33,6 +33,7 @@ class Snippet extends CI_Controller {
 		
 		if ( !empty( $id ) ) {
 			$data = array(
+				'id' => $id,
 				'content' => $this->input->post( 'snippet' )
 			);
 			$this->snippetModel->updateSnippet( $id, $data );

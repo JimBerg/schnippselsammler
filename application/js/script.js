@@ -3,7 +3,7 @@
 	var previewBox = $( '#codebox' );
 	var preview = $( '#previewbox > pre' );
 	var hoverState = true;
-	
+	var editable = false;
 
 	/*---------------------------------------------------------*
 	 * add syntax highlighting on page load
@@ -95,6 +95,25 @@
 		});
 	});
 	
+	/*---------------------------------------------------------*
+	 * box click - maybe you want to have it editable
+	 *--------------------------------------------------------*/
+	$( '#codebox' ).on( 'click', function() {
+		/*editable = !editable;
+		$( '#codebox' ).attr( { 'contenteditable': editable } );
+		if( editable ) {
+			setEndOfContenteditable( codebox );	
+		}*/
+		$( '#codebox' ).attr( { 'contenteditable': true } );
+		setEndOfContenteditable( codebox );	
+	});
+	
+	/*---------------------------------------------------------*
+	 * bblöööööör
+	 *--------------------------------------------------------*/
+	$( '#listview' ).on( 'click', function() {
+		$( '#codebox' ).attr( { 'contenteditable': false } );
+	});
 	
 	/*---------------------------------------------------------*
 	 * set cursor at the end of the textbox
@@ -179,6 +198,34 @@
 	
 	// Activates knockout.js
 	ko.applyBindings( new ViewModel() );
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*---------------------------------------------------------*
+	* listview scroll
+	*--------------------------------------------------------*/
+	
+	
+	
+	
+	
+	
+	
 	
 	
 })( jQuery );

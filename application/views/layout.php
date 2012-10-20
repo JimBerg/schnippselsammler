@@ -20,7 +20,6 @@
            		<div id="listview">
            			<?php echo $view; ?>
             	</div>
-        	   
 		        <div id="preview">
 		           <?php echo $preview; ?>
 		        </div>

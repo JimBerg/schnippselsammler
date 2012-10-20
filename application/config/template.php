@@ -59,9 +59,8 @@ $template['active_template'] = 'default';
 $template['default']['template'] = 'layout';
 $template['default']['regions'] = array(
    'header',
-   /*'tableview',
-   'create'*/
-   'listview',
+   'create',
+   'view',
    'preview'
 );
 $template['default']['parser'] = 'parser';

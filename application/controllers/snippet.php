@@ -6,31 +6,31 @@ class Snippet extends CI_Controller {
 		parent::__construct();	
 	}
 	
-	public function index() 
+	
+	/*------------------------------------------------------------*
+	* default action - renders templates for listview
+	*------------------------------------------------------------*/
+	public function index( $view = 'listview' ) 
 	{
 		$this->load->model( 'snippetModel' );
 		$data['table'] = $this->snippetModel->getLanguages();
-		
-		//$this->template->write_view( 'tableview', 'tableview', $data );
-		//$this->template->write_view( 'create', 'create', $data );
-		
-		//$this->template->write( 'header', '<h1>Snippetmanager</h1>' );
-		$this->template->write_view( 'header', 'header' );
-		$this->template->write_view( 'listview', 'listview', $data );
+		$data['activeTab'] = $view;
+		 
+		$this->template->write_view( 'header', 'header', $data );
+		$this->template->write_view( 'view', $view, $data );
 		$this->template->write_view( 'preview', 'preview', $data );
 		$this->template->render();
 	}
 	
 	
-	/**
+	/*------------------------------------------------------------*
 	* save updatet snippet
-	* @param int $id of element that has been edited
-	*---------------------------------------------*/
+	*------------------------------------------------------------*/
 	public function saveData( )
 	{
 		$this->load->model( 'snippetModel' );
 		$id = $this->input->post( 'snippetId' );
-		
+		die(var_dump($_POST));
 		if ( !empty( $id ) ) {
 			$data = array(
 				'id' => $id,
@@ -43,58 +43,19 @@ class Snippet extends CI_Controller {
 		}
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public function noindex() /*index runs automatically */
-	{
-		$this->load->model( 'snippetModel' );
-		//$data['snippets'] = $this->snippetModel->getSnippets( 'php' );
-		//$this->load->view( 'index', $data );
-		$this->load->view( 'create' );
-return;
-		$data['table'] = $this->snippetModel->getLanguages();
-		$this->load->view( 'table', $data );
-	}
-
 	public function create()
 	{
-		/* load form helper */
-		//$this->load->view( 'create' );
 		$this->load->model( 'snippetModel' );
-		
+	
 		$data = array(
 			'title' 	=> $this->input->post( 'title' ),
 			'syntax' 	=> $this->input->post( 'syntax' ),
-			'content' 	=> $this->input->post( 'content' ),
+			'tags' 		=> $this->input->post( 'tags' ),
+			'content' 	=> $this->input->post( 'newSnippet' ),
 		);
 
 		$this->snippetModel->insertSnippet( $data );
+		redirect( 'snippet' );
 	}
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

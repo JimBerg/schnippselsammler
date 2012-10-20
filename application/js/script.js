@@ -10,6 +10,14 @@
 	 *--------------------------------------------------------*/
 	$( document ).ready( function() {
 		prettyPrint();
+		$( "#syntax" ).select2({
+			'width': '396px',
+		});
+		
+		$( '#tags' ).select2({
+			'tags': 'true',
+			'width': '396px'
+		});
 	});
 	
 	
@@ -58,11 +66,15 @@
 			if ( hoverState === false && $li.hasClass( 'highlighted' ) ) {
 				$li.removeClass( 'highlighted' );
 				hoverState = true;
+				$( '#codebox' ).attr( { 'contenteditable': false } );
+				/*$( '#submit' ).fadeOut();*/
 			}
 			
 			if( hoverState === true && lastElement.length == 0 ) {
 				$li.addClass( 'highlighted' );
 				$( 'li' ).not( $li ).removeClass( 'highlighted' );
+				$( '#codebox' ).attr( { 'contenteditable': true } );
+				/*$( '#submit' ).fadeIn();*/
 				hoverState = false;
 				setEndOfContenteditable( codebox );	
 			} else if ( hoverState === false && lastElement.length > 0 ) {

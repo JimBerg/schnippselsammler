@@ -4,7 +4,7 @@
 		<?php $row = $table[ $arraykeys[ $i ] ]; ?>
 		
 		<h3><?php echo $arraykeys[ $i ]; ?></h3>
-		<ul class="<?php echo $arraykeys[ $i ]; ?> collapsed" data-id="<?php echo $i; ?>">
+		<ul class="<?php echo $arraykeys[ $i ]; ?> collapsed listview" data-id="<?php echo $i; ?>">
 			<?php foreach ( $row as $snippet ) : ?>
 				<li data-id="<?php echo $snippet->id; ?>" data-attr="<?php echo $snippet->content; ?>">
 					<span><?php echo $snippet->title; ?></span>

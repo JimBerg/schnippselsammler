@@ -1,60 +1,30 @@
-ok let's move the preview here 
-
-
-<!--<link rel="stylesheet" href="<?php echo base_url( 'application/css'); ?>/js/highlighter/prettify.css">
-<script src="<?php echo base_url( 'application/js/highlighter' ); ?>/prettify.js" type="text/javascript"></script>
-<ul>
-	<li><a>Vorschau</a></li>
-	<li><a>Snippet hinzufügen</a></li>
-</ul>
-<body onload="prettyPrint()">
-<h2>Neues Snippet erstellen</h2>
-
 <?php echo form_open( 'snippet/create' ); ?>
+	
 	<label>Titel</label>
 	<input type="text" id="title" name="title" />
 	
-	<br/>
+	
+	<label>Tags</label>
+	<div class="selectBox">
+		<input type="text" id="tags" name="tags" />
+	</div>
 	
 	<label>Syntax</label>
-	<select id="syntax" name="syntax">
-		<option name="javascript" value="javascript">javascript</option>
-		<option name="php" value="php">php</option>
-		<option name="html_css" value="html_css">html & css</option>
-		<option name="sql" value="sql">SQL</option>
-		<option name="sh" value="sh">bash</option>
-		<option name="vb" value="vb">Visual Basic</option>
-	</select>
-
-	<br/>
+	<div class="selectBox">
+		<select id="syntax" name="syntax">
+			<option name="javascript" value="javascript">javascript</option>
+			<option name="php" value="php">php</option>
+			<option name="html_css" value="html_css">html & css</option>
+			<option name="sql" value="sql">SQL</option>
+			<option name="sh" value="sh">bash</option>
+			<option name="vb" value="vb">Visual Basic</option>
+		</select>	
+	</div>
 	
-	<label>Code</label>
-	<textarea id="code" name="code" class="prettyprint">
-		(function() {
-			var jsSyntaxHighlighting = 'rocks';
-		})();
-	</textarea>
+	<label>Kommentar</label>
+	<textarea id="comment" name="commment"></textarea>
 
-	<br />
-	<input type="submit" value="submit" />
+	<input type="hidden" id="newSnippet" name="newSnippet" data-bind="" />
+	<input type="submit" value="submitNew" />
 
-<?php echo form_close(); ?> -->
-
-
-<!--<pre class="prettyprint">
-	(function() {
-   		var jsSyntaxHighlighting = 'rocks';
-	})();
-</pre> 
-
-var bla = text;
-for (var i = ; i<= 9; i++) {
-    do some fucking shit;
-}
-
-
-somePrettyCool( function ) {
-
-/* highlight me!!! */
-}
--->
+<?php echo form_close(); ?>

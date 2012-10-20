@@ -1,9 +1,13 @@
 <h2>Snippets</h2>
 
 <nav>
-	<ul>
-		<li>list em all!</li>
-		<li>create a new one</li>
+	<ul id="navigation">
+		<li <?php if ( $activeTab == 'listview' ) { echo "class='active'"; } ?>>
+			<a href="<?php echo site_url( 'snippet/index' ); ?>">Zeigs mir!</a>
+		</li>
+ 		<li <?php if ( $activeTab == 'create' ) { echo "class='active'"; } ?>>
+ 			<a href="<?php echo site_url( 'snippet/index/create' ); ?>">Noch eins!</a>
+ 		</li>
 	</ul>
 </nav>
 

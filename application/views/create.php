@@ -22,9 +22,9 @@
 	</div>
 	
 	<label>Kommentar</label>
-	<textarea id="comment" name="commment"></textarea>
+	<textarea id="comment" name="comment"></textarea>
 
 	<input type="hidden" id="newSnippet" name="newSnippet" data-bind="" />
-	<input type="submit" value="submitNew" />
+	<input type="submit" value="speichern" id="submitNew" />
 
 <?php echo form_close(); ?>

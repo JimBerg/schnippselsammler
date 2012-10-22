@@ -17,12 +17,14 @@
 	
       	<div id="wrapper">     
         	<div id="content">
-           		<div id="listview">
+           		<div id="<?php echo $activeTab; ?>">
            			<?php echo $view; ?>
             	</div>
-		        <div id="preview">
-		           <?php echo $preview; ?>
-		        </div>
+            	<?php if ( $activeTab == 'listview' ): ?>
+			        <div id="preview">
+			           <?php echo $preview; ?>
+			        </div>
+			    <?php endif; ?>    
             </div>
       	</div>
   		

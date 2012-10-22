@@ -65,7 +65,11 @@ class SnippetModel extends CI_Model {
 	}
 
 
-
+ 	public function deleteSnippet( $id ) 
+	{
+		$this->db->where( 'id', $id );
+		$this->db->delete( 'snippets' ); 
+	}
 
 
 

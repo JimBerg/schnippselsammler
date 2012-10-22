@@ -95,6 +95,7 @@
 		});
 	});
 	
+	
 	/*---------------------------------------------------------*
 	 * box click - maybe you want to have it editable
 	 *--------------------------------------------------------*/
@@ -106,7 +107,16 @@
 		}*/
 		$( '#codebox' ).attr( { 'contenteditable': true } );
 		setEndOfContenteditable( codebox );	
+		hoverState = false;
 	});
+	
+	$( '#codebox' ).on( 'mouseleave', function() { 
+		window.setTimeout( function(){
+			$( '#codebox' ).attr( { 'contenteditable': false } );
+			hoverState = true;
+		}, 1000 );
+	});
+	
 	
 	/*---------------------------------------------------------*
 	 * bblöööööör
@@ -114,6 +124,7 @@
 	$( '#listview' ).on( 'click', function() {
 		$( '#codebox' ).attr( { 'contenteditable': false } );
 	});
+	
 	
 	/*---------------------------------------------------------*
 	 * set cursor at the end of the textbox

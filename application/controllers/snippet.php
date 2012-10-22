@@ -30,7 +30,7 @@ class Snippet extends CI_Controller {
 	{
 		$this->load->model( 'snippetModel' );
 		$id = $this->input->post( 'snippetId' );
-		die(var_dump($_POST));
+		
 		if ( !empty( $id ) ) {
 			$data = array(
 				'id' => $id,
@@ -57,5 +57,4 @@ class Snippet extends CI_Controller {
 		$this->snippetModel->insertSnippet( $data );
 		redirect( 'snippet' );
 	}
-
 }
